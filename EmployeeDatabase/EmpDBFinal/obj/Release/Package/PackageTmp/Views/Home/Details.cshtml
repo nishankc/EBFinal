@@ -1,0 +1,173 @@
+﻿@model EmpDBFinal.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+@if (ViewBag.displayRole == "yes")
+{
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.Surname)</h2>
+                <hr />
+                <table class="table" id="vertical-1">
+
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                        <td>@Html.DisplayFor(model => model.FirstName)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Surname)</th>
+                        <td>@Html.DisplayFor(model => model.Surname)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+                        <td>@Html.DisplayFor(model => model.DateOfBirth, "ShortDateTime")</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Position.PositionName)</th>
+                        <td>@Html.DisplayFor(model => model.Position.PositionName)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.StartDate)</th>
+                        <td>@Html.DisplayFor(model => model.StartDate, "ShortDateTime")</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Username)</th>
+                        <td>@Html.DisplayFor(model => model.Username)</td>
+                    </tr>
+                    <tr>
+                        <th>Years Of Service</th>
+                        <td>@ViewBag.displayYears</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Address1)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Address1)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Address2)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Address2)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Town)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Town)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.County)</th>
+                        <td>@Html.DisplayFor(model => model.Address.County)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Postcode)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Postcode)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.PhoneNumber)</th>
+                        <td>@Html.DisplayFor(model => model.Address.PhoneNumber)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+
+                    <br /><br /><br /><br /><br /><br /><br /><br />
+                    <div class="col-md-2"></div>
+                    <input class="btn-lg btn-default col-md-6" type="button" value="Edit" onclick="location.href='@Url.Action("Edit", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'" />
+                </div>
+                <div class="row">
+                    <br /><br /><br /><br />
+                    <div class="col-md-2"></div>
+                    <input class="btn-lg btn-default col-md-6" type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Home", new { id = @Html.DisplayFor(model => model.EmployeeId) })'" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.Surname)</h2>
+                <hr />
+                <table class="table" id="vertical-1">
+
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                        <td>@Html.DisplayFor(model => model.FirstName)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Surname)</th>
+                        <td>@Html.DisplayFor(model => model.Surname)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+                        <td>@Html.DisplayFor(model => model.DateOfBirth, "ShortDateTime")</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Position.PositionName)</th>
+                        <td>@Html.DisplayFor(model => model.Position.PositionName)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.StartDate)</th>
+                        <td>@Html.DisplayFor(model => model.StartDate, "ShortDateTime")</td>
+                    </tr>
+
+                    <tr>
+                        <th>Years Of Service</th>
+                        <td>@ViewBag.displayYears</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Address1)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Address1)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Address2)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Address2)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Town)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Town)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.County)</th>
+                        <td>@Html.DisplayFor(model => model.Address.County)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.Postcode)</th>
+                        <td>@Html.DisplayFor(model => model.Address.Postcode)</td>
+                    </tr>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Address.PhoneNumber)</th>
+                        <td>@Html.DisplayFor(model => model.Address.PhoneNumber)</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+
+        <input class="btn-lg btn-primary col-md-8" type="button" value="Back to Employee List" onclick="location.href='@Url.Action("ViewEmployees", "Home")'" />
+
+    </div>
+
+    <div class="col-md-4">
+        @using (Html.BeginForm("Index", "Account"))
+        {
+            <input class="btn-lg btn-primary col-md-8" type="button" value="Back to Main Menu" onclick="location.href='@Url.Action("Index", "Account")'" />
+        }
+    </div>
+
+</div>
+
